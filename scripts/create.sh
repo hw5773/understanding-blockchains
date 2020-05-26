@@ -6,15 +6,16 @@ if [ "$#" -ne 1 ]; then
 fi
 
 LANG=$1
+ROOT=${PWD}/..
 
 if [ "$LANG" = "node" ]; then
-  echo "node client/createCounter.js counter1 up 0"
-  node client/createCounter.js counter1 up 0
-  echo "node client/createCounter.js counter2 down 0"
-  node client/createCounter.js counter2 down 0
+  echo "node ${ROOT}/client/createCounter.js counter1 up 0"
+  node ${ROOT}/client/createCounter.js counter1 up 0
+  echo "node ${ROOT}/client/createCounter.js counter2 down 0"
+  node ${ROOT}/client/createCounter.js counter2 down 0
 elif [ "$LANG" = "java" ]; then
-  echo "java client/CreateCounter counter1 up 0"
-  java client/CreateCounter counter1 up 0
-  echo "java client/CreateCounter counter2 down 0"
-  java client/CreateCounter counter2 down 0
+  echo "java ${ROOT}/client/CreateCounter counter1 up 0"
+  java ${ROOT}/client/CreateCounter counter1 up 0
+  echo "java ${ROOT}/client/CreateCounter counter2 down 0"
+  java ${ROOT}/client/CreateCounter counter2 down 0
 fi

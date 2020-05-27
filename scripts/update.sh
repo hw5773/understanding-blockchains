@@ -7,15 +7,15 @@ fi
 
 LANG=$1
 
-cd $CLIENT
+cd $APPLICATION
 if [ "$LANG" = "node" ]; then
-  echo "node ${ROOT}/client/updateCounter.js counter1"
-  node ${ROOT}/client/updateCounter.js counter1
-  echo "node ${ROOT}/client/updateCounter.js counter2"
-  node ${ROOT}/client/updateCounter.js counter2
+  echo "node ${ROOT}/application/updateCounter.js counter1"
+  node ${ROOT}/application/updateCounter.js counter1
+  echo "node ${ROOT}/application/updateCounter.js counter2"
+  node ${ROOT}/application/updateCounter.js counter2
 elif [ "$LANG" = "java" ]; then
-  echo "java ${ROOT}/client/UpdateCounter counter1"
-  java ${ROOT}/client/UpdateCounter counter1
-  echo "java ${ROOT}/client/UpdateCounter counter2"
-  java ${ROOT}/client/UpdateCounter counter2
+  echo "java ${ROOT}/application/UpdateCounter counter1"
+  java ${ROOT}/application/UpdateCounter counter1
+  echo "java ${ROOT}/application/UpdateCounter counter2"
+  java ${ROOT}/application/UpdateCounter counter2
 fi

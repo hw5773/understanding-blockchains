@@ -38,3 +38,8 @@ You should implement the following applications by using either of Java or Javas
 3. Name of the Application
 - NodeJS: readCounter.js
 - Java: ReadCounter.java
+
+4. Console Print
+- The application should print the result on the console in the following form.
+- name: &lt; counter name &gt;, value: &lt; counter value &gt;
+- Example) When we execute "node readCounter.js counter", it should only print "name: counter, value: 5" (assuming the current value of the counter is 5)

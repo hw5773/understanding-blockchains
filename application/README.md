@@ -4,9 +4,9 @@ Please implement your client applications in this directory
 
 You should implement the following applications by using either of Java or Javascript
 
-## Client: createCounter
+## Application: createCounter
 1. Description
-- This client issues the createCounter transaction
+- The application issues the createCounter transaction
 
 2. Arguments of the Application
 - first argument: the name of the counter to be created
@@ -17,9 +17,9 @@ You should implement the following applications by using either of Java or Javas
 - NodeJS: createCounter.js 
 - Java: CreateCounter.java
 
-## Client: updateCounter
+## Application: updateCounter
 1. Description
-- This client issues the updateCounter transaction
+- The application issues the updateCounter transaction
 
 2. Arguments of the Application
 - first argument: the name of the counter
@@ -28,9 +28,9 @@ You should implement the following applications by using either of Java or Javas
 - NodeJS: updateCounter.js
 - Java: UpdateCounter.java
 
-## Client: readCounter
+## Application: readCounter
 1. Description:
-- This client issues the readCounter transaction
+- The application issues the readCounter transaction
 
 2. Arguements of the Application
 - first argument: the name of the counter

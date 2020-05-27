@@ -18,7 +18,7 @@ fi
 
 export ROOT=${PWD}
 export NETWORK=${ROOT}/test-network
-export CLIENT=${ROOT}/client
+export APPLICATION=${ROOT}/application
 export ANSWER=${ROOT}/answer
 export ANSWER_FILE=${ANSWER}/answer
 
@@ -52,14 +52,14 @@ echo "SNU Blockchain> Configure the test network"
 
 # 2) Enroll the administrator
 echo "SNU Blockchain> Enroll the administrator"
-cd $CLIENT
+cd $APPLICATION
 test -f package-lock.json || npm install
-rm $CLIENT/wallet/*
+rm $APPLICATION/wallet/*
 node enrollAdmin.js
 
 # 3) Register the appUser
 echo "SNU Blockchain> Register the user"
-cd $CLIENT
+cd $APPLICATION
 node registerUser.js
 
 # 4) Create the counters

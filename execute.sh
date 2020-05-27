@@ -16,27 +16,68 @@ else
   exit 1
 fi
 
-# Configure the Network
-#./conf_network.sh
+export ROOT=${PWD}
+export NETWORK=${ROOT}/test-network
+export CLIENT=${ROOT}/client
+export ANSWER=${ROOT}/answer
+export ANSWER_FILE=${ANSWER}/answer
 
-# TODO: Please Set the Chaincode to Peers
+export FABRIC_CFG_PATH=${ROOT}/config
+export IMAGE_TAG=2.1.0
+export COMPOSE_PROJECT_NAME=snu
+export PATH=$PATH:${PWD}/bin
+
+# Configure the Network
+echo "SNU Blockchain> Configure the test network"
+./conf_network.sh
+
+# Please Set the Chaincode to Peers, following the Lifecycle of the Chaincode
+# Please refer to https://hyperledger-fabric.readthedocs.io/en/release-2.1/deploy_chaincode.html#package-the-smart-contract
+# 1) TODO: Package the Chaincode
+
+# 2) TODO: Install the Chaincode
+
+# 3) TODO: Approve a Chaincode Definition
+
+# 4) TODO: Committing the Chaincode Definition to the Channel
 
 
 # TODO: Please Install any Dependencies and Generate Binaries of Client Applications (or Transactions), if needed
+# ex) npm install or javac client/readCounter.java
 
 
 # Test Clients and the Chaincode
-# TODO: Please Set the Environment Variables to Communicate with the peer0.org1.example.com
-# 1) Change Environment Variables to communicate with peer0.org1.example.com
+# 1) TODO: Change Environment Variables to communicate with peer0.org1.example.com, if needed
+# Please Set the Environment Variables to Communicate with the peer0.org1.example.com
 
-# 2) Create the counters
+# 2) Enroll the administrator
+echo "SNU Blockchain> Enroll the administrator"
+cd $CLIENT
+test -f package-lock.json || npm install
+rm $CLIENT/wallet/*
+node enrollAdmin.js
+
+# 3) Register the appUser
+echo "SNU Blockchain> Register the user"
+cd $CLIENT
+node registerUser.js
+
+# 4) Create the counters
+echo "SNU Blockchain> Create the counters"
+cd $ROOT
 scripts/create.sh $LANG
 
-# 3) Update the counters 
+# 5) Update the counters 
+echo "SNU Blockchain> Update the counters"
 scripts/update.sh $LANG
 
-# TODO: Please Set the Environment Variables to Communicate with the peer0.org2.example.com
-# 4) Change Environment Variables to communicate with peer0.org2.example.com
+# 6) TODO: Change Environment Variables to communicate with peer0.org2.example.com
+# Please Set the Environment Variables to Communicate with the peer0.org2.example.com
 
-# 5) Read the counters
-scripts/read.sh $LANG
+# 7) Read the counters
+echo "SNU Blockchain> Read the counters"
+rm ${ANSWER_FILE}
+scripts/read.sh $LANG > ${ANSWER_FILE}
+
+echo "SNU Blockchain> Clean the test network"
+./finish_network.sh

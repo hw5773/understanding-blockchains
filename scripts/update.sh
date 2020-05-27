@@ -6,8 +6,8 @@ if [ "$#" -ne 1 ]; then
 fi
 
 LANG=$1
-ROOT=${PWD}/..
 
+cd $CLIENT
 if [ "$LANG" = "node" ]; then
   echo "node ${ROOT}/client/updateCounter.js counter1"
   node ${ROOT}/client/updateCounter.js counter1

@@ -33,21 +33,21 @@ echo "SNU Blockchain> Configure the test network"
 
 # Please Set the Chaincode to Peers, following the Lifecycle of the Chaincode
 # Please refer to https://hyperledger-fabric.readthedocs.io/en/release-2.1/deploy_chaincode.html#package-the-smart-contract
-# 1) TODO: Package the Chaincode
+# 1) TODO 1: Package the Chaincode
 
-# 2) TODO: Install the Chaincode
+# 2) TODO 2: Install the Chaincode
 
-# 3) TODO: Approve a Chaincode Definition
+# 3) TODO 3: Approve a Chaincode Definition
 
-# 4) TODO: Committing the Chaincode Definition to the Channel
+# 4) TODO 4: Committing the Chaincode Definition to the Channel
 
 
-# TODO: Please Install any Dependencies and Generate Binaries of Client Applications (or Transactions), if needed
+# TODO 5: Please Install any Dependencies and Generate Binaries of Client Applications (or Transactions), if needed
 # ex) npm install or javac client/readCounter.java
 
 
 # Test Clients and the Chaincode
-# 1) TODO: Change Environment Variables to communicate with peer0.org1.example.com, if needed
+# 1) TODO 6: Change Environment Variables to communicate with peer0.org1.example.com, if needed
 # Please Set the Environment Variables to Communicate with the peer0.org1.example.com
 
 # 2) Enroll the administrator
@@ -71,7 +71,7 @@ scripts/create.sh $LANG
 echo "SNU Blockchain> Update the counters"
 scripts/update.sh $LANG
 
-# 6) TODO: Change Environment Variables to communicate with peer0.org2.example.com
+# 6) TODO 7: Change Environment Variables to communicate with peer0.org2.example.com
 # Please Set the Environment Variables to Communicate with the peer0.org2.example.com
 
 # 7) Read the counters

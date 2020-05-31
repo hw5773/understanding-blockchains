@@ -13,7 +13,7 @@ mkdir -p $STUDENT/chaincode
 mkdir -p $STUDENT/application
 
 cp -rf chaincode/* $STUDENT/chaincode
-cp -rf client/* $STUDENT/application
+cp -rf application/* $STUDENT/application
 cp execute.sh $STUDENT
 
 tar czvf $STUDENT.tar.gz $STUDENT

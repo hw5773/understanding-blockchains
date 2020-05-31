@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -ne 1 ]; then
-  echo "Usage: $0 [node/java]" >&2
+  echo "Usage: $0 [the language used to implement applications (node/java)]" >&2
   exit 1
 fi
 

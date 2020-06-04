@@ -234,7 +234,7 @@ function createOrgs() {
     echo "##### Generate certificates using Fabric CA's ############"
     echo "##########################################################"
 
-    IMAGE_TAG=$IMAGETAG docker-compose -f $COMPOSE_FILE_CA up -d 2>&1
+    IMAGE_TAG=1.4.6 docker-compose -f $COMPOSE_FILE_CA up -d 2>&1
 
     . organizations/fabric-ca/registerEnroll.sh
 
@@ -436,7 +436,7 @@ CC_SRC_LANGUAGE=golang
 # Chaincode version
 VERSION=1
 # default image tag
-IMAGETAG="latest"
+IMAGETAG="2.1.0"
 # default database
 DATABASE="leveldb"
 

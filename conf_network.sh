@@ -1,5 +1,6 @@
 #!/bin/bash
 
+NETWORK=${PWD}/test-network
 cd $NETWORK
 docker stop logspout
 ./network.sh down

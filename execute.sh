@@ -43,7 +43,7 @@ echo "SNU Blockchain> Configure the test network"
 
 
 # TODO 5: Please Install any Dependencies and Generate Binaries of Client Applications (or Transactions), if needed
-# ex) npm install or javac application/readCounter.java
+# ex) npm install or mvn clean package
 
 
 # Test Clients and the Chaincode

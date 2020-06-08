@@ -14,8 +14,8 @@ if [ "$LANG" = "node" ]; then
   echo "node ${ROOT}/application/readCounter.js counter2"
   node ${ROOT}/application/readCounter.js counter2
 elif [ "$LANG" = "java" ]; then
-  echo "java ${ROOT}/application/ReadCounter counter1"
-  java ${ROOT}/application/ReadCounter counter1
-  echo "java ${ROOT}/application/ReadCounter counter2"
-  java ${ROOT}/application/ReadCounter counter2
+  echo "java -jar ${ROOT}/application/ReadCounter.jar counter1"
+  java -jar ${ROOT}/application/ReadCounter.jar counter1
+  echo "java -jar ${ROOT}/application/ReadCounter.jar counter2"
+  java -jar ${ROOT}/application/ReadCounter.jar counter2
 fi

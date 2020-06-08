@@ -14,8 +14,8 @@ if [ "$LANG" = "node" ]; then
   echo "node ${ROOT}/application/createCounter.js counter2 down 10"
   node ${ROOT}/application/createCounter.js counter2 down 10
 elif [ "$LANG" = "java" ]; then
-  echo "java ${ROOT}/application/CreateCounter counter1 up 0"
-  java ${ROOT}/application/CreateCounter counter1 up 0
-  echo "java ${ROOT}/application/CreateCounter counter2 down 10"
-  java ${ROOT}/application/CreateCounter counter2 down 10
+  echo "java -jar ${ROOT}/application/CreateCounter.jar counter1 up 0"
+  java -jar ${ROOT}/application/CreateCounter.jar counter1 up 0
+  echo "java -jar ${ROOT}/application/CreateCounter.jar counter2 down 10"
+  java -jar ${ROOT}/application/CreateCounter.jar counter2 down 10
 fi

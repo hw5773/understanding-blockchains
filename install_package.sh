@@ -7,3 +7,4 @@ echo "export GRADLE_HOME=/opt/gradle/gradle-6.4.1" > env
 echo "export PATH=/opt/gradle/gradle-6.4.1/bin:$PATH" >> env
 
 sudo apt install openjdk-8-jdk
+sudo apt install maven

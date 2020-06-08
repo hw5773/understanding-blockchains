@@ -50,14 +50,23 @@ echo "SNU Blockchain> Configure the test network"
 # 1) Enroll the administrator
 echo "SNU Blockchain> Enroll the administrator"
 cd $APPLICATION
-test -f package-lock.json || npm install
-rm $APPLICATION/wallet/*
-node enrollAdmin.js
+rm -rf $APPLICATION/wallet/*
+
+if [ "$LANG" = "node" ]; then
+  test -f package-lock.json || npm install
+  node enrollAdmin.js
+elif [ "$LANG" = "java" ]; then
+  java -jar EnrollAdmin.jar
+fi
 
 # 2) Register the appUser
 echo "SNU Blockchain> Register the user"
 cd $APPLICATION
-node registerUser.js
+if [ "$LANG" = "node" ]; then
+  node registerUser.js
+elif [ "$LANG" = "java" ]; then
+  java -jar RegisterUser.jar
+fi
 
 # 3) Create the counters
 echo "SNU Blockchain> Create the counters"

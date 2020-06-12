@@ -6,7 +6,9 @@ import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.hyperledger.fabric.gateway.Wallet;
-import org.hyperledger.fabric.gateway.Wallet.Identity;
+import org.hyperledger.fabric.gateway.Wallets;
+import org.hyperledger.fabric.gateway.Identities;
+import org.hyperledger.fabric.gateway.Identity;
 import org.hyperledger.fabric.sdk.Enrollment;
 import org.hyperledger.fabric.sdk.security.CryptoSuite;
 import org.hyperledger.fabric.sdk.security.CryptoSuiteFactory;
@@ -31,11 +33,11 @@ public class EnrollAdmin {
 		caClient.setCryptoSuite(cryptoSuite);
 
 		// Create a wallet for managing identities
-		Wallet wallet = Wallet.createFileSystemWallet(Paths.get("wallet"));
+		//Wallet wallet = Wallet.createFileSystemWallet(Paths.get("wallet"));
+		Wallet wallet = Wallets.newFileSystemWallet(Paths.get("wallet"));
 
 		// Check to see if we've already enrolled the admin user.
-		boolean adminExists = wallet.exists("admin");
-        if (adminExists) {
+        if (wallet.get("admin") != null) {
             System.out.println("An identity for the admin user \"admin\" already exists in the wallet");
             return;
         }
@@ -45,7 +47,7 @@ public class EnrollAdmin {
         enrollmentRequestTLS.addHost("localhost");
         enrollmentRequestTLS.setProfile("tls");
         Enrollment enrollment = caClient.enroll("admin", "adminpw", enrollmentRequestTLS);
-        Identity user = Identity.createIdentity("Org1MSP", enrollment.getCert(), enrollment.getKey());
+        Identity user = Identities.newX509Identity("Org1MSP", enrollment);
         wallet.put("admin", user);
 		System.out.println("Successfully enrolled user \"admin\" and imported it into the wallet");
 	}
